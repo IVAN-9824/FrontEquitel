@@ -18,7 +18,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatIconModule} from '@angular/material/icon';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes=[
   {path: 'home', component:HomeComponent},
@@ -36,6 +36,7 @@ const routes: Routes=[
     RegisterProductComponent,
     HomeComponent,
     ShowProductsComponent,
+    
 
   ],
   imports: [
@@ -51,6 +52,7 @@ const routes: Routes=[
     MatListModule,
     MatToolbarModule,
     MatIconModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
