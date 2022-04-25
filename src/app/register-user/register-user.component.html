@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<title> Registration or Sign Up form in HTML CSS | CodingLab </title>-->
+    <link rel="stylesheet" >
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Registro de Parte</h2>
+    <form  [formGroup]="formParent" (ngSubmit)="createUser()">
+      <div class="input-box">
+        <input type="text" formControlName="nombre" placeholder="Nombre" required>
+        <div class="alert-danger" *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">
+          <div class="container-error-message" *ngIf="nombre?.hasError('required')">
+            Campo es requerida 
+          </div>
+      </div>
+      </div>
+      <div class="test-box">
+        <textarea  placeholder="Descripcion"  formControlName="descripcion"  rows="10" cols="40" required></textarea>
+        <div class="alert-danger" *ngIf="descripcion?.invalid && (descripcion?.dirty || descripcion?.touched)">
+          <div class="container-error-message" *ngIf="descripcion?.hasError('required')">
+            Campo es requerida 
+          </div>
+      </div>
+      </div>
+      <div >
+        <button  class="button" type="submit" >Crear Parte</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+  
+

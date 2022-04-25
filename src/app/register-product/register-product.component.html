@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" >
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registrar Motor </div>
+    <div class="content">
+      <form  [formGroup]="formParent" (ngSubmit)="leerForm()" >
+        <div class="user-details">
+          <div class="input-box" >
+            <input type="text"class="form-control"  placeholder="# referencia"  formControlName="ref"  required>
+            <div class="alert-danger" *ngIf="ref?.invalid && (ref?.dirty || ref?.touched)">
+              <div class="container-error-message" *ngIf="ref?.hasError('required')">
+                Campo es requerida 
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <input type="text"  formControlName="potencia" placeholder="potencia" required>
+            <div class="alert-danger" *ngIf="potencia?.invalid && (potencia?.dirty || potencia?.touched)">
+              <div class="container-error-message" *ngIf="potencia?.hasError('required')">
+                Campo es requerida 
+              </div>
+              <div class="container-error-message" *ngIf="potencia?.hasError('pattern')">
+                Solo valores numericos 
+               </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <input type="text" formControlName="valorImportacion" placeholder="Valor De Importacion" required>
+            <div class="alert-danger" *ngIf="valorImportacion?.invalid && (valorImportacion?.dirty || descripcion?.touched)">
+              <div class="container-error-message" *ngIf="valorImportacion?.hasError('required')">
+                Campo es requerida 
+              </div>
+              <div class="container-error-message" *ngIf="valorImportacion?.hasError('pattern')">
+                Solo valores numericos 
+               </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="test-box">
+          <textarea  placeholder="Descripcion"  formControlName="descripcion"  rows="10" cols="40" required></textarea>
+          <div class="alert-danger" *ngIf="descripcion?.invalid && (descripcion?.dirty || descripcion?.touched)">
+            <div class="container-error-message" *ngIf="descripcion?.hasError('required')">
+              Campo es requerida 
+            </div>
+          </div>
+        </div>
+        
+        <div >
+          <button   class="button" type="submit" >Crear Motor</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

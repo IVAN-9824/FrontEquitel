@@ -1,0 +1,48 @@
+<html>
+<body>
+<div class="container-fluid">
+	<table class="table" name="tabla">
+		<thead>
+			<tr>
+				<th># Referencia</th>
+				<th>Potencia</th>
+				<th>Descripcion</th>
+				<th>Volor De Importacion</th>
+				<th>Partes Del Motor</th>
+                
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let item of motores">
+				<td>
+                    <li>
+                    {{item.ref}}
+                </li>
+            </td>
+				<td>
+                    <li>
+                    {{item.potencia}}
+                </li>
+            </td>
+				<td>    <li>
+                    {{item.descripcion}}
+                </li></td>
+                <td>    <li >
+                    $ {{item.valorImportacion}}
+                </li></td>
+                <td>    <li >
+                    <div   >
+                        <select name="motor"  class="select-css" (change)="listPartes(item.ref)" >
+                          <option [ngValue]="parte" disabled *ngFor="let parte of partes">{{parte.parte.nombre}}</option>
+                          </select>
+                      </div>
+                </li></td>
+              
+               
+            </tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

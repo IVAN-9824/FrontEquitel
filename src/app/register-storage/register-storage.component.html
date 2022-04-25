@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<title> Registration or Sign Up form in HTML CSS | CodingLab </title>-->
+    <link rel="stylesheet" >
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Asociar Partes Del Motor</h2>
+    <form  [formGroup]="formParent" (ngSubmit)="createStorage()">
+      <div class="input-box">
+        <input type="text" placeholder="Cantidad" formControlName="cantidad" required>
+        <div class="alert-danger" *ngIf="cantidad?.invalid && (cantidad?.dirty || cantidad?.touched)">
+          <div class="container-error-message" *ngIf="cantidad?.hasError('required')">
+            Campo es requerida 
+          </div>
+          <div class="container-error-message" *ngIf="cantidad?.hasError('pattern')">
+            Solo valores numericos 
+           </div>
+        </div>
+      </div>
+      <div >
+        <select name="motor" formControlName="motor"  class="select-css" >
+          <option [ngValue]="" disabled>Motor</option>
+          <option [ngValue]="motor" *ngFor="let motor of motores">{{motor.ref}}</option>
+          </select>
+          <div class="alert-danger" *ngIf="motor?.invalid && (motor?.dirty || motor?.touched)">
+            <div class="container-error-message" *ngIf="motor?.hasError('required')">
+              Campo es requerida 
+            </div>
+          </div>
+      </div>
+      <div ></div>
+      <div >
+        <select name="motor" formControlName="parte"  class="select-css" >
+          <option [ngValue]=""disabled >Parte Del Motor</option>
+          <option [ngValue]="parte" *ngFor="let parte of partes">{{parte.nombre}}</option>
+          </select>
+          <div class="alert-danger" *ngIf="parte?.invalid && (parte?.dirty || parte?.touched)">
+            <div class="container-error-message" *ngIf="parte?.hasError('required')">
+              Campo es requerida 
+            </div>
+          </div>
+      </div>
+      <div >
+        <button class="button" type="submit" >Asociar Parte</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
