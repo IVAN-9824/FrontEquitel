@@ -26,6 +26,7 @@ export class ShowProductsComponent implements OnInit {
     })
   }
    listPartes (id :any){
+     console.log("hola")
     this.appService.getTiene(id).subscribe((data:any)=>{
       console.log(data);
       this.partes =data;

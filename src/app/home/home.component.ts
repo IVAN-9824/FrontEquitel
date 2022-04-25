@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     {name:"Crear Parte", route:"createuser", icon:"settings"},
     {name:"Asociar Partes Del Motor", route:"createstorage", icon:"build"},
     {name:"Crear Motor", route:"createproduct", icon:"commute"},
-    {name:"Ver Producto", route:"showProducts", icon:"visibility"},
+    {name:"Ver Motores", route:"showProducts", icon:"visibility"},
   ]
 
   fillerContent = Array.from(

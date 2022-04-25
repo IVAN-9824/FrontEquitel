@@ -1,6 +1,6 @@
 <html>
 <body>
-<div class="container-fluid">
+<div style="text-align:center;">
 	<table class="table" name="tabla">
 		<thead>
 			<tr>
@@ -8,6 +8,7 @@
 				<th>Potencia</th>
 				<th>Descripcion</th>
 				<th>Volor De Importacion</th>
+                <th>Mostrar Partes</th>
 				<th>Partes Del Motor</th>
                 
 
@@ -32,9 +33,15 @@
                     $ {{item.valorImportacion}}
                 </li></td>
                 <td>    <li >
-                    <div   >
-                        <select name="motor"  class="select-css" (change)="listPartes(item.ref)" >
-                          <option [ngValue]="parte" disabled *ngFor="let parte of partes">{{parte.parte.nombre}}</option>
+                    <div >
+                        <button  class="mat-raised-button" type="submit" (click)="listPartes(item.ref)" >Mostrar Partes</button>
+                      </div>
+                </li></td>
+
+                <td>    <li >
+                    <div >
+                        <select name="motor"  class="select-css"  >
+                          <option [ngValue]="parte" disabled *ngFor="let parte of partes">{{parte.cantidad}}-{{parte.parte.nombre}}</option>
                           </select>
                       </div>
                 </li></td>
